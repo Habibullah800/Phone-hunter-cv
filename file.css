@@ -1,0 +1,29 @@
+button:hover {
+    border: none;
+    background-color: #FF9000;
+}
+
+.inputs {
+    border: 1px solid #6AB802;
+    width: 350px;
+    border-top-left-radius: 5px;
+    color: #6AB802;
+}
+
+.inputs:focus {
+    outline: none;
+    border: 1px solid #FF9000;
+}
+
+.login-btn {
+    border: none;
+    background-color: #6AB802;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    height: 33px;
+}
+
+.text-field {
+    height: 50px;
+}
