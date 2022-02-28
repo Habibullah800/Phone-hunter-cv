@@ -1,6 +1,6 @@
 button:hover {
     border: none;
-    background-color: #FF9000;
+    background-color: rgb(30, 30, 199);
 }
 
 .inputs {
@@ -26,4 +26,8 @@ button:hover {
 
 .text-field {
     height: 50px;
+}
+.hr{
+    height: 5px  ;
+    color: #6AB802;
 }
