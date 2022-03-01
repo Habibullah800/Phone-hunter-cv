@@ -2,6 +2,7 @@ const allMobiles = () => {
     const searchfield = document.getElementById('search-box');
     const searchText = searchfield.value;
     searchfield.value = '';
+    document.getElementById('spinner').style.display = 'block';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
 
     fetch(url)
@@ -27,21 +28,54 @@ const allMobiles = () => {
             Thanks for being with us.
         </div>
     </div>`
+                document.getElementById('see-more').style.display = 'none'
+                document.getElementById('footer').style.display = 'none'
+
             }
             else {
                 showMobileDetails(data.data.slice(0, 21))
-                console.log(data.data.slice(0, 15))
+                document.getElementById('see-more').style.display = 'block'
+                document.getElementById('footer').style.display = 'block'
+
+
+
             }
+            document.getElementById('spinner').style.display = 'none';
 
         });
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //showMobileDetails(data.data)
 const showMobileDetails = (data) => {
     const searchResult = document.getElementById('search-result');
     searchResult.innerHTML = '';
     const detailsContainer = document.getElementById('details-container')
     detailsContainer.innerHTML = '';
+
+    // document.getElementById('see-more').innerText = '';
 
 
     data.forEach(mobile => {
