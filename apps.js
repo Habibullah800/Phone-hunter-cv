@@ -1,16 +1,47 @@
 const allMobiles = () => {
     const searchfield = document.getElementById('search-box');
     const searchText = searchfield.value;
-    searchfield.value = ' ';
+    searchfield.value = '';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
 
     fetch(url)
-        .then(res => res.json())
-        .then(data => showMobileDetails(data.data));
-}
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.status == false) {
+                const searchResult = document.getElementById('search-result');
+                searchResult.innerHTML = `
+                
+                <div class="card text-center w-50 mx-auto">
+        <div class="card-header m-2" style="background-color:#ffeaa7">
+            <h3 style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;">Invalid Phone name</h3>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Instructions</h5>
+            <p class="card-text">Use the correct mobile name to find the mobile of your choice.</p>
 
+        </div>
+        <div class="card-footer text-muted">
+            Thanks for being with us.
+        </div>
+    </div>`
+            }
+            else {
+                showMobileDetails(data.data)
+            }
+
+        });
+
+}
+//showMobileDetails(data.data)
 const showMobileDetails = (data) => {
-    const searchResult = document.getElementById('search-result')
+    const searchResult = document.getElementById('search-result');
+    searchResult.innerHTML = '';
+
+    if (data.length == 0) {
+
+    }
+
     data.forEach(mobile => {
 
         const div = document.createElement('div');
@@ -25,10 +56,9 @@ const showMobileDetails = (data) => {
 
                 <p class="card-text">If you are interested in this phone then click on Details below for more information, Thank you.</p>
                 
-                <i>
-                <button onclick="details('${mobile.slug}')"   class="btn btn-primary d-flex justify-content-center w-100">
-                Details
-                    </button> </i>
+                <a href="#" onclick="details('${mobile.slug}')" class="btn btn-primary d-flex justify-content-center w-100">Details</a>
+
+               
              </div>
         </div> `;
         searchResult.appendChild(div)
@@ -47,7 +77,7 @@ const setDetails = (info) => {
     document.getElementById('details-container').innerHTML = `
     <div class="card mx-auto" style="width: 60rem; background-color:#f1f2f6">
     
-    <img class="rounded mx-auto d-block my-3" src="${info.image}" height="400px" width="320px" alt="Card image cap">
+    <img class="rounded mx-auto d-block my-4" src="${info.image}" height="400px" width="320px" alt="Card image cap">
 
     <div class="card-body">
         <h5 class="card-title text-center">
@@ -57,7 +87,9 @@ const setDetails = (info) => {
         <p class="card-text text-center">
         Released On: ${info.releaseDate}
             </p>
+        
     </div>
+    <li class="text-center my-2" style="background-color: bisque;" class="list-group-item"> Sensor info: ${info.mainFeatures.sensors[0]} ${info.mainFeatures.sensors[1]}, ${info.mainFeatures.sensors[2]}, ${info.mainFeatures.sensors[3]}, ${info.mainFeatures.sensors[4]}, ${info.mainFeatures.sensors[5]}</li>
     <div  class="row">
         <div class="col-6">
             <ul class="list-group list-group-flush">
@@ -77,12 +109,14 @@ const setDetails = (info) => {
                 <li style="background-color:aquamarine" class="list-group-item"> NFC: ${info.others.NFC} </li>
             </ul>
         </div>
+        
     </div>
+    
 </div>
 
 
 `
 
-    console.log(info.image);
+
 
 }
