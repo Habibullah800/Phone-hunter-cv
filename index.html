@@ -6,16 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f4939b24c8.js" crossorigin="anonymous"></script>
+
     <!------------------------ 
         -----Add CSS link-----
         --------------------->
     <link rel="stylesheet" href="file.css">
+
     <!------------------------------------
         ------Add Bootstrap CSS link------
         ---------------------------------->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Document</title>
+
+    <title>BD-Stall</title>
+
+    <!----------------------------------------
+        --------------Fav-icon---------------
+        ------------------------------------->
+    <link rel="shortcut icon" href="images/favicon.webp" type="image/x-icon">
+
+    <!----------------------------------------
+        --------------btn-style---------------
+        ------------------------------------->
     <style>
         .btn {
             border: none;
@@ -31,9 +43,15 @@
 </head>
 
 <body>
+    <!----------------------------------------
+        ----------------Heading-----------------
+        ------------------------------------------>
     <h2 style="color:#6AB802" class="text-center m-2">Android BD Stall</h2>
     <header>
-        <!-------- Start Navbar and search area --------->
+
+        <!----------------------------------------
+        ------Start Navbar and search area-------
+        ------------------------------------------>
         <div class="container my-4">
             <div class="row">
                 <div class="col-sm-2 col-12 pb-4">
@@ -49,34 +67,36 @@
                 </div>
             </div>
         </div>
-
     </header>
-    <hr>
 
+    <hr>
+    <!----------------------------------------
+        -------------Spinner image------------
+        ------------------------------------->
     <img id="spinner" src="images/loader.gif" alt="">
 
-
-
-
-
-
-
+    <!----------------------------------------
+        ------Details showing container-------
+        ------------------------------------->
     <div id="details-container">
     </div>
 
-    <!-- search result -->
+    <!----------------------------------------
+        ------search result showing div-------
+        ------------------------------------->
     <div id="search-result" class="row row-cols-1 row-cols-md-3">
     </div>
-    <!--End search result -->
 
-
-
-
+    <!----------------------------------------
+        -------------See More btn--------------
+        ------------------------------------->
     <div style="text-align:center">
-        <button onclick="ShowAllMobile()" id="see-more" class="btn btn-primary mx-auto">See more</button>
-
+        <button id="see-more" class="btn btn-primary mx-auto">See more</button>
     </div>
 
+    <!----------------------------------------
+        -------------Add Footer--------------
+        ------------------------------------->
     <footer id="footer"> <br> Md-Habibullah-bahar Copyright©All for 2020-25 </footer>
 
     <!----------------------------------------
@@ -85,13 +105,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
     <!-------------------------------------
         -----------Add JS link-------------
         ----------------------------------->
     <script src="apps.js"></script>
+
 </body>
-
-
-
 
 </html>

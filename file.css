@@ -1,3 +1,4 @@
+/*------- style------- */
 button:hover {
     border: none;
     background-color: rgb(30, 30, 199);
@@ -23,19 +24,24 @@ button:hover {
     border-radius: 5px;
     height: 33px;
 }
-
+/*-------Search box style------- */
 .text-field {
     height: 50px;
 }
-.hr{
-    height: 5px  ;
-    color: #6AB802;
-}
+/*-------Spinner style------- */
+#spinner {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+  }
+/*------- See more button Style------- */
 #see-more{
     display: none;
     margin: 20px;
 }
-#footer{
+/*--------- footer Style----------- */
+  #footer{
     background-color:blue;
     color: white;
     font-weight: 600;
@@ -44,9 +50,4 @@ button:hover {
     border-radius: 10px;
     display: none;
 }
-#spinner {
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-    width: 10%;
-  }
+/*--------- The End----------- */
