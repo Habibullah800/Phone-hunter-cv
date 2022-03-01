@@ -29,16 +29,16 @@
     </style>
 </head>
 
-<body>
+<body style="background-color:hsl(40, 14%, 96%)">
     <header>
-
+        <!-------- Start Navbar and search area --------->
         <div class="container my-4">
             <div class="row">
                 <div class="col-sm-2 col-12 pb-4">
                     <img src="images/bdstall-logo.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-sm-7 col-8 d-flex justify-content-center text-field">
-                    <input id="search-box" class="inputs" placeholder="&nbsp; Type mobile Phone name" type="text">
+                    <input id="search-box" class="inputs" placeholder=" Type mobile Phone name" type="text">
                     <button onclick="allMobiles()" id="search-btn" class="btn btn-primary">Search</button>
                 </div>
                 <div class="col-sm-3 col-4 mt-1 d-flex justify-content-end">
@@ -51,82 +51,13 @@
     </header>
 
 
-
-
-
-
-
-    <div class="card mx-auto" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+    <div id="details-container">
     </div>
 
-    <hr class="hr">
-
-
-
-
-
-
-
-
-
-    <div class="container">
-        <div class="row mx-auto">
-            <div class="col-sm-4 col-12 m-auto">
-
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-12 m-auto">
-
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-12 m-auto">
-
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- search result -->
+    <div id="search-result" class="row row-cols-1 row-cols-md-3">
     </div>
-
-
-
-
-
-
-
+    <!--End search result -->
 
 
     <!----------------------------------------
@@ -140,5 +71,8 @@
         ----------------------------------->
     <script src="apps.js"></script>
 </body>
+
+
+
 
 </html>
