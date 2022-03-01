@@ -8,12 +8,14 @@ const allMobiles = () => {
         .then((res) => res.json())
         .then((data) => {
             if (data.status == false) {
+                const detailsContainer = document.getElementById('details-container')
+                detailsContainer.innerHTML = '';
                 const searchResult = document.getElementById('search-result');
                 searchResult.innerHTML = `
                 
                 <div class="card text-center w-50 mx-auto">
         <div class="card-header m-2" style="background-color:#ffeaa7">
-            <h3 style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;">Invalid Phone name</h3>
+            <h3 style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;">Wrong Phone name</h3>
         </div>
         <div class="card-body">
             <h5 class="card-title">
@@ -27,7 +29,8 @@ const allMobiles = () => {
     </div>`
             }
             else {
-                showMobileDetails(data.data)
+                showMobileDetails(data.data.slice(0, 21))
+                console.log(data.data.slice(0, 15))
             }
 
         });
@@ -37,10 +40,9 @@ const allMobiles = () => {
 const showMobileDetails = (data) => {
     const searchResult = document.getElementById('search-result');
     searchResult.innerHTML = '';
+    const detailsContainer = document.getElementById('details-container')
+    detailsContainer.innerHTML = '';
 
-    if (data.length == 0) {
-
-    }
 
     data.forEach(mobile => {
 
@@ -81,9 +83,14 @@ const setDetails = (info) => {
 
     <div class="card-body">
         <h5 class="card-title text-center">
+        Brand: ${info.brand} <br><br>
+
         Name of Phone: ${info.name} 
         
+        
         </h5>
+
+       
         <p class="card-text text-center">
         Released On: ${info.releaseDate}
             </p>
